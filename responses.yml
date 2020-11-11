@@ -1,0 +1,49 @@
+# responses:
+#    utter_greet:
+#        - text: |
+#            Hallo, ich bin ein Raumbuchung Assistent. Wie kann ich Ihnen helfen?
+#    utter_ask_location:
+#        - text: |
+#            In welchem Standort möchten Sie den Raum reservieren?
+#    utter_ask_date:
+#        - text: |
+#            Am welchen Tag möchten Sie den Raum reservieren?
+#        - text: |
+#            Wann soll die Veranstaltung stattfinden?
+#    utter_ask_number_of_participants:
+#        - text: |
+#            Wie viele Personen werden den Raum nutzen?
+#        - text: |
+#            Für wie viele Personen?
+#    utter_ask_starting_time:
+#        - text: |
+#            Um wie viel Uhr soll es beginnen?
+#        - text: |
+#            Können Sie mir, bitte, noch die Uhrzeit angeben?
+#    utter_ask_duration:
+#        - text: |
+#            Wie lange soll die Versnstaltung dauern?
+#    utter_checking_requirements:
+#        - text: |
+#            Ich prüfe Verfügbarkeit. Haben Sie, bitte, einen Augenblick Geduld.
+#    utter_ask_confirmation:
+#        - text: |
+#            Also ein Raum in {location} für {number_of_participants} Personen am {date} von {starting_time} to {ending_time}. Stimmt das?
+#    utter_politeness:
+#        - text: |
+#            Sehr gerne.
+#        - text: |
+#            Prima.
+#        - text: |
+#            Wunderbar.
+#        - text: |
+#            Alles klar.
+#    utter_confirmation:
+#        - text: |
+#            Der Raum Nummer 14 steht Ihnen zur Verfügung. Kann ich Ihnen noch helfen?
+#    utter_youre_welcome:
+#        - text: |
+#            Sehr gerne!
+#    utter_good_bye:
+#        - text: |
+#            Tschüß!

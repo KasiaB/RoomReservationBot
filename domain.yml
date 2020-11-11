@@ -1,0 +1,122 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- affirm
+- deny
+- greet
+- good_bye
+- request_room_reservation
+- out_of_scope
+- say_q1_location
+- say_q2_date
+- say_q3_number_of_participants
+- say_q4_starting_time
+- say_q5_duration
+- thank_you
+
+entities:
+- LOC
+- number
+- duration
+- Numeral
+- Duration
+- time
+- PERSON
+- ORG
+- PER
+- MISC
+slots:
+  q1_location:
+    type: text
+    influence_conversation: false
+  q2_date:
+    type: text
+    influence_conversation: false
+  q3_number_of_participants:
+    type: text
+    influence_conversation: false
+  q5_duration:
+    type: text
+    influence_conversation: false
+  q4_starting_time:
+    type: text
+    influence_conversation: false
+  # ending_time:
+  #   type: text
+  #   influence_conversation: false
+responses:
+  utter_greet:
+  - text: Hallo, ich bin ein Raumbuchung Assistent. Wie kann ich Ihnen helfen?
+  utter_ask_q1_location:
+  - text: In welchem Standort möchten Sie den Raum reservieren?
+  utter_ask_q2_date:
+  - text: Am welchen Tag möchten Sie den Raum reservieren?
+  utter_ask_q3_number_of_participants:
+  - text: Wie viele Personen werden den Raum nutzen?
+  - text: Für wie viele Personen?
+  utter_ask_q4_starting_time:
+  - text: Um wie viel Uhr soll es beginnen?
+  - text: Können Sie mir, bitte, noch die Uhrzeit nennen?
+  utter_ask_q5_duration:
+  - text: Wie lange soll die Versnstaltung dauern?
+  utter_ask_confirmation:
+  - text: Also ein Raum in {q1_location} für {q3_number_of_participants} Personen am {q2_date} um {q4_starting_time}. Stimmt das?
+  utter_politeness:
+  - text: Sehr gerne prüfe ich es gleich.
+  - text: Einen Augenblick bitte.
+  - text: Warten Sie btte einen Augenblick, ich prüfe die Verfügbarkeit.
+  utter_checking_requirements:
+  - text: Ich prüfe Verfügbarkeit. Haben Sie, bitte, einen Augenblick Geduld
+  utter_confirmation:
+  - text: Der Raum Nummer 14 steht Ihnen zur Verfügung. Kann ich Ihnen noch helfen?
+  utter_out_of_scope:
+  - text: Können Sie, bitte, Ihre Antwort anders formulieren?
+  utter_you_are_welcome:
+  - text: Sehr gerne!
+  utter_good_bye:
+  - text: Tschüß!
+  utter_sorry:
+  - text: Entschuldigen Sie, bitte!
+  utter_ask_for_corrections:
+  - text: Welche Angaben soll ich korrigieren?
+actions:
+- '...'
+- utter_ask_for_corrections
+- utter_greet
+- utter_ask_q1_location
+- utter_ask_q2_date
+- utter_ask_q5_duration
+- utter_ask_q3_number_of_participants
+- utter_ask_q4_starting_time
+- utter_checking_requirements
+- utter_confirmation
+- utter_good_bye
+- utter_out_of_scope
+- utter_politeness
+- utter_sorry
+- utter_you_are_welcome
+# - validate_room_reservation_form
+forms:
+  room_reservation_form:
+    q1_location:
+    - entity: LOC
+      type: from_entity
+    q2_date:
+    - entity: time
+      # intent: request_room_reservation, say_date
+      type: from_entity
+    q3_number_of_participants:
+    - entity: number
+      # intent: request_room_reservation, say_number_of_participants
+      # not_intent: say_starting_time, say_duration
+      type: from_entity
+    q4_starting_time:
+    - entity: time
+    #   intent: request_room_reservation, say_date, say_starting_time
+    #   role: hour
+      type: from_entity
+    q5_duration:
+    - entity: duration
+    #   intent: request_room_reservation, say_duration, say_date, say_starting_time
+      type: from_entity

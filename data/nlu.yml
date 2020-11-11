@@ -1,0 +1,114 @@
+nlu:
+- intent: greet
+  examples: |
+    - Hallo
+    - Guten Tag
+    - Guten morgen
+    - Tag
+    - Hallöchen
+    - Tagchen
+    - Morgen
+
+- intent: request_room_reservation
+  examples: |
+    - Ich möchte bitte einen Raum für Mitte nächste Woche reservieren
+    - Ich bräuchte ein Zimmer in Köln für nächsten Montag
+    - Sind welche Zimmer noch heute verfügbar?
+    - Kannst du für mich ein Zimmer für sechs Personen buchen?
+    - Ich bräuchte einen Raum für 13 Personen.
+    - ich brauche einen Raum für 23 Personen am 12. Dezember um 13 Uhr
+
+- intent: say_q2_date
+  examples: |
+    - morgen
+    - am 13 November um 14 Uhr
+    - heute Abend
+    - am 1. Dezember
+    - am 3. Mai 2020
+    - nächsten Donnerstag
+
+- intent: say_q1_location
+  examples: |
+    - in Frankfurt
+    - Berlin
+    - in Köln
+
+- intent: say_q3_number_of_participants
+  examples: |
+    - 6
+    - 8 Personen
+    - sieben
+    - elf Leute
+    - ungefähr 30 Teilnehmer
+
+# - intent: say_q4_starting_time
+#   examples: |
+#     - 8 Uhr
+#     - um elf
+#     - um 15 Uhr
+#     - 12:00
+#     - gegen 13 Uhr
+#     - am 13 November um 14 Uhr
+
+# - intent: say_q5_duration
+#   examples: |
+#     - etwa 90 Minuten
+#     - ungefähr 2 Stunden
+#     - eine Stunde
+#     - 45 Minuten
+#     - bis elf
+#     - bis fünfzehn Uhr
+#     - bis 13:30
+#     - bis 18:00
+#     - spätestens bis 20 Uhr
+    
+- intent: affirm
+  examples: |
+    - ja
+    - genau
+    - stimmt
+    - ja genau
+    - prima!
+    - wunderbar
+    - na klar
+    - klar
+    - selbstverständlich
+    - ja bitte
+    - gerne
+    - sehr gerne
+    - absolut
+    - ok
+    - okey
+
+- intent: deny
+  examples: |
+    - nein
+    - nee
+    - ne
+    - nö
+    - leider nicht
+    - fast
+    - stimmt nicht
+    
+- intent: thank_you
+  examples: |
+    - dankeschön
+    - danke
+    - vielen Dank
+    - thanks!
+
+- intent: good_bye
+  examples: |
+    - Tschüß!
+    - Auf Wiederhören.
+    - Bis dann!
+    - Bis später!
+    - Dankeschön, tschau!
+    - Danke! Tschüß!
+    - Vielen Dank! Auf Wiederhören.
+
+- intent: out_of_scope
+  examples: |
+    - Ich möchte was zum Essen bestellen
+    - Wie viel ist 2 + 2?
+    - Wie heißt dein Mann?

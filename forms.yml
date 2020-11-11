@@ -1,0 +1,22 @@
+# forms:
+#   room_reservation_form:
+#     location:
+#       - type: from_entity
+#         entity: location
+#     date:
+#       - type: from_entity
+#         entity: date
+#     number_of_participants:
+#       - type: from_entity
+#         entity: number
+#     starting_time:
+#       - type: from_entity
+#         entity: starting_time
+#     duration:
+#       - type: from_entity
+#         entity: duration
+#     confirmation:
+#       - type: from_intent
+#         value: true
+#         intent: affirm
+    

@@ -1,0 +1,78 @@
+stories:
+ - story: greet and request room
+   steps:
+   - intent: greet
+   - action: utter_greet
+   - intent: request_room_reservation
+   - action: utter_politeness
+   - action: room_reservation_form
+   - active_loop: room_reservation_form
+
+ - story: room reservation happy path
+   steps:
+   - intent: request_room_reservation
+   - action: utter_politeness
+   - action: room_reservation_form
+   - active_loop: room_reservation_form
+   - active_loop: null
+   - action: utter_ask_confirmation
+   - intent: affirm
+   - action: utter_checking_requirements
+   - action: utter_confirmation
+
+ - story: room reservation go wrong
+   steps:
+   - intent: request_room_reservation
+   - action: utter_politeness
+   - action: room_reservation_form
+   - active_loop: room_reservation_form
+   - active_loop: null
+   - action: utter_ask_confirmation
+   - intent: deny
+   - action: utter_sorry
+   - action: utter_ask_for_corrections
+
+ - story: thank you
+   steps:
+   - intent: thank_you
+   - action: utter_you_are_welcome
+
+ - story: good bye
+   steps:
+   - intent: good_bye
+   - action: utter_good_bye
+
+ - story: room reservation procedure
+   steps:
+   - active_loop: room_reservation_form
+   - active_loop: null
+   - action: utter_ask_confirmation
+
+   
+ - story: succesfully confirm reservation details
+   steps:
+   - action: utter_ask_confirmation
+   - intent: affirm
+   - action: utter_checking_requirements
+   - action: utter_confirmation
+
+ - story: deny reservation details
+   steps:
+   - action: utter_ask_confirmation
+   - intent: deny
+   - action: utter_sorry
+   - action: utter_ask_for_corrections
+
+ # - story: handle user affirm reservation details
+ #   steps:
+ #   - checkpoint: check_booking_confirmation
+ #   - intent: affirm
+ #   - action: utter_checking_requirements
+ #   - action: utter_confirmation
+
+ # - story: handle user deny reservation details
+ #   steps:
+ #   - checkpoint: check_booking_confirmation
+ #   - intent: deny
+ #   - action: room_reservation_form
+ #   - active_loop: room_reservation_form
